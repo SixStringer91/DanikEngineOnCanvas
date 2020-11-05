@@ -300,6 +300,7 @@
                 iEnds = viewport.end[1];
                 q = viewport.start[0];
                 qEnds = viewport.end[0];
+                
             } else {
                 i = 0;
                 iEnds = map.length;

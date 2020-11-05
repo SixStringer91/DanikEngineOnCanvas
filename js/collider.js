@@ -17,10 +17,11 @@
         this.npcArray = 0;
     }
     Collision.prototype.isCollision = function() {
+const iLength = this.array.length;
 
-        for (let i = 0; i < this.array.length; i++) {
-
-            for (let q = 0; q < this.array[i].length; q++) {
+        for (let i = 0; i < iLength; i++) {
+            const qLength = this.array[i].length;
+            for (let q = 0; q < qLength; q++) {
                 this.unwalkable.forEach((tile) => {
                     if (this.array[i][q] === tile) {
                         this.walls(q, i, tile)

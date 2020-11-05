@@ -22,7 +22,7 @@ this.loadImage(path);
       id: 0 //grass
   
     },
-    {array: [16, 1],
+    {array: [0, 1],
       walkable: true,
       id: 1 //road-base
     },
