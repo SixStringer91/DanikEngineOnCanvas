@@ -94,6 +94,7 @@
             }
             this.ctx.fillStyle = "red";
             if (this.viewZoneCheck()) {
+                this.drawShadowEllips();
                 this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
             }
             this.numAttack = 0;
@@ -129,6 +130,7 @@
             }
             this.ctx.fillStyle = "red";
             if (this.viewZoneCheck()) {
+                this.drawShadowEllips();
                 this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
             }
             this.collisionDirection.top = false;
@@ -166,6 +168,7 @@
             }
             this.ctx.fillStyle = "red";
             if (this.viewZoneCheck()) {
+                this.drawShadowEllips();
                 this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
                 this.collisionDirection.right = false;
             }
@@ -203,6 +206,7 @@
             }
             this.ctx.fillStyle = "red";
             if (this.viewZoneCheck()) {
+                this.drawShadowEllips();
                 this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
             }
             this.collisionDirection.left = false
@@ -215,6 +219,7 @@
         this.height = this.health < 100 ? this.frameHeight * 3 : this.frameHeight * 7;
         if (!this.frame) this.num = this.num < 6 ? this.num += 1 : this.num = 0;
         if (this.viewZoneCheck()) {
+            this.drawShadowEllips();
             this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
         }
         this.numAttack = 0;
@@ -225,6 +230,7 @@
         this.height = this.health < 100 ? this.frameHeight * 1 : this.frameHeight * 5;
         if (!this.frame) this.num = this.num < 6 ? this.num += 1 : this.num = 0;
         if (this.viewZoneCheck()) {
+            this.drawShadowEllips();
             this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
         }
         this.numAttack = 0;
@@ -237,6 +243,7 @@
         this.height = this.health < 100 ? this.frameHeight * 0 : this.frameHeight * 4;
         if (!this.frame) this.num = this.num < 6 ? this.num += 1 : this.num = 0;
         if (this.viewZoneCheck()) {
+            this.drawShadowEllips();
             this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
         }
         this.numAttack = 0;
@@ -247,6 +254,7 @@
             this.height = this.health < 100 ? this.frameHeight * 2 : this.frameHeight * 6;
             if (!this.frame) this.num = this.num < 6 ? this.num += 1 : this.num = 0;
             if (this.viewZoneCheck()) {
+                this.drawShadowEllips();
                 this.ctx.drawImage(this.img, this.width * this.num, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight);
             }
             this.numAttack = 0;
@@ -258,6 +266,7 @@
 
         if (!this.frame) this.numAttack = this.numAttack < 5 ? this.numAttack += 1 : this.numAttack = 0;
         if (this.viewZoneCheck()) {
+            this.drawShadowEllips();
             this.ctx.drawImage(this.img, (this.width * this.numAttack), this.height, this.width, this.frameHeight * 3, this.viewZone.offset[0] + (this.playerX - this.frameWidth), this.viewZone.offset[1] + ((this.playerY - this.frameHeight / 2)), this.width, this.frameHeight * 3);
         }
         this.num = 0
@@ -267,6 +276,7 @@
         this.height = ((this.frameHeight * 3) * 7) + ((this.frameHeight * 2) - this.frameHeight * 2)
         if (!this.frame) this.numAttack = this.numAttack < 5 ? this.numAttack += 1 : this.numAttack = 0;
         if (this.viewZoneCheck()) {
+            this.drawShadowEllips();
             this.ctx.drawImage(this.img, (this.width * this.numAttack), this.height, this.width, this.frameHeight * 3, this.viewZone.offset[0] + (this.playerX - this.frameWidth), this.viewZone.offset[1] + ((this.playerY - this.frameHeight / 2) - this.frameHeight), this.width, this.frameHeight * 3);
         }
         this.num = 0
@@ -276,6 +286,7 @@
         this.height = ((this.frameHeight * 3) * 10) + ((this.frameHeight * 2) - this.frameHeight);
         if (!this.frame) this.numAttack = this.numAttack < 5 ? this.numAttack += 1 : this.numAttack = 0;
         if (this.viewZoneCheck()) {
+            this.drawShadowEllips();
             this.ctx.drawImage(this.img, (this.width * this.numAttack), this.height, this.width, this.frameHeight * 3, this.viewZone.offset[0] + (this.playerX - this.frameWidth), this.viewZone.offset[1] + ((this.playerY - this.frameHeight / 2)), this.width, this.frameHeight * 3);
         }
         this.num = 0
@@ -285,6 +296,7 @@
         this.height = ((this.frameHeight * 3) * 8) + ((this.frameHeight * 2) - this.frameHeight);
         if (!this.frame) this.numAttack = this.numAttack < 5 ? this.numAttack += 1 : this.numAttack = 0;
         if (this.viewZoneCheck()) {
+            this.drawShadowEllips();
             this.ctx.drawImage(this.img, (this.width * this.numAttack), this.height, this.width, this.frameHeight * 3, this.viewZone.offset[0] + (this.playerX - this.frameWidth), this.viewZone.offset[1] + ((this.playerY - this.frameHeight / 2)), this.width, this.frameHeight * 3);
         }
         this.num = 0
@@ -300,6 +312,18 @@
         this.ctx.drawImage(this.img, this.width * this.numDeath, this.height, this.width, this.frameHeight, this.viewZone.offset[0] + this.playerX, this.viewZone.offset[1] + this.playerY - 32, this.width, this.frameHeight); //}
         this.numAttack = 0
     }
+
+    Character.prototype.drawShadowEllips = function (ctx=this.ctx, x=this.viewZone.offset[0]+this.playerX+28, y=this.viewZone.offset[1] + this.playerY+28, a=10, b=7) {
+       ctx.save();
+       ctx.beginPath();
+       ctx.translate(x, y);
+       ctx.scale(a / b, 1);
+       ctx.arc(0, 0, b, 0, Math.PI * 2, true);
+       ctx.restore();
+       ctx.closePath();
+       ctx.fillStyle = `rgba(0,0,0,0.3)`
+       ctx.fill();
+     }
 
     Game.Character = Character;
 })()

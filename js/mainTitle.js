@@ -14,9 +14,9 @@
         this.allCount = 0;
         this.loadCount = 0;
         this.listPng = [
-            'images/hero.png',
+            'images/hero5.png',
             'images/skeleton.png',
-            'images/tileSet.png',
+            'images/tileSet5.png',
             'images/orc.png',
             'images/skeleton2.png'
         ];
@@ -40,8 +40,6 @@
 
     MainTitle.prototype.textAnimation = function(requestID = this.requestID, opacity = this.opacity, gamePlay = this.gamePlay) {
         let counter = 0;
-        //let logo = 'Danik Engine Demo';
-
         let logoArr = ('Danik Engine Demo').split('');
         let logoView = ''
         let titleFirst = canvas.getContext('2d');
@@ -152,12 +150,9 @@
     }
 
     MainTitle.prototype.check = function() {
-        // if (this.loadCount >= this.listPng.length+this.listAudio.length) return
-        //this.loadImg()
-        //this.loadImg()
-        this.loadAudio()
-        this.loadImg()
-        this.loadFonts()
+        this.loadAudio();
+        this.loadImg();
+        this.loadFonts();
         if (this.allCount === this.loadCount) return this.loaded === true
     }
 

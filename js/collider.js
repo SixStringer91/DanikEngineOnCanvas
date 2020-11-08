@@ -13,35 +13,33 @@
         this.bodyYTop;
         this.bodyYBottom;
         this.collider;
-        this.unwalkable = tiles.filter(obj => !obj.walkable).map(obj => obj.id)
+        this.unwalkable = tiles.filter(function(obj){return!obj.walkable}).map(function(obj){return obj.id});
         this.npcArray = 0;
     }
     Collision.prototype.isCollision = function() {
 const iLength = this.array.length;
-
         for (let i = 0; i < iLength; i++) {
             const qLength = this.array[i].length;
             for (let q = 0; q < qLength; q++) {
-                this.unwalkable.forEach((tile) => {
+                this.unwalkable.forEach(function(tile){
                     if (this.array[i][q] === tile) {
                         this.walls(q, i, tile)
                     }
-                })
+                },this)
                 if (this.npcArray) {
-                    this.npcArray.forEach((enem) => {
+                    this.npcArray.forEach(function(enem){
                         if (this.npcArray && (i === Math.floor(enem[0] / this.blockEdge) && q === Math.floor(enem[1] / this.blockEdge))) {
 
                             this.wallsEnemy(enem)
                         }
-                    })
+                    },this)
                 }
             }
         }
     }
 
     Collision.prototype.wallsEnemy = function(tile) {
-        let topCollision, bottomCollision, leftCollision, rightCollision
-        this.diff = 16;
+        let topCollision, bottomCollision, leftCollision, rightCollision;
         this.blockXLeft = tile[1] + this.diff
         this.blockXRight = tile[1] + this.blockEdge - this.diff
         this.blockYTop = tile[0] + this.diff
@@ -135,17 +133,13 @@ const iLength = this.array.length;
 
 
     Collision.prototype.walls = function(q, i, tile) {
-        // if (this.array[i+1][q + 1] ===undefined) {
-        //  // console.log(q + 1);
-        // }
+
         let qDec, qInc, iDec, iInc, leftCollision, rightCollision, topCollision, bottomCollision;
         iDec = i - 1 < 0 ? iDec = i : iDec = i - 1;
         iInc = i + 1 > this.array.length - 1 ? iInc = i : iInc = i + 1;
         qDec = q - 1 < 0 ? qDec = q : qDec = q - 1;
         qInc = q + 1 > this.array[q].length - 1 ? qInc = q : qInc = q + 1;
 
-
-        this.diff = 16;
         this.blockXLeft = q * this.obj.frameWidth;
         this.blockXRight = q * this.obj.frameWidth + this.obj.frameWidth;
         this.blockYTop = i * this.obj.frameHeight;

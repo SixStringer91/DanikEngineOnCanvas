@@ -1,12 +1,12 @@
 (function() {
     const LoadAudio = function(arr) {
-        this.dom = this.load(arr)
+        this.dom = this.load(arr);
         this.state = 'stop';
     }
     LoadAudio.prototype.load = function(arr) {
-        let audio = document.createElement('audio');
+        const audio = document.createElement('audio');
         for (let i = 0; i < arr.length; i++) {
-            let source = document.createElement('source')
+            const source = document.createElement('source');
             source.src = arr[i]
             audio.appendChild(source)
         }

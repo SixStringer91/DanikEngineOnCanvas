@@ -16,8 +16,9 @@
         this.flickering()
     };
     Grain.prototype.flickering = function() {
-        for (let i = 0; i < this.pix.length; i += 4) {
-            let color = (Math.random() * 255) + 50;
+        const pixLength = this.pix.length;
+        for (let i = 0; i < pixLength; i += 4) {
+            const color = (Math.random() * 255) + 50;
             this.pix[i] = color;
             this.pix[i + 1] = color;
             this.pix[i + 2] = color;

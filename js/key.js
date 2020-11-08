@@ -15,15 +15,15 @@
         };
         this.swordAttack;
         this.sword;
-        this.keyDown = {}
+        this.keyDown = {};
     }
 
 
-    //проверка на близость к врагу (меньше 48пикселей)
+    //checking enemy closeness (less than 48px)
     Keys.prototype.isEnemyNear = function(enemy = this.enemy, obj = this.obj) {
-        destination = () => {
-            let diffX = obj.playerX - enemy.playerX
-            let diffY = obj.playerY - enemy.playerY
+        function destination () {
+            const diffX = obj.playerX - enemy.playerX
+            const diffY = obj.playerY - enemy.playerY
             return Math.floor(Math.sqrt(diffX * diffX + diffY * diffY))
         }
         if (destination() <= 56) {

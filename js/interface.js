@@ -10,7 +10,7 @@
             if (playerHealth <= 0) playerHealth = 0;
             let stats = this.ctx;
             stats.strokeStyle = "#3A3A3A";
-             stats.fillStyle = `rgba(255,${150*(playerHealth/100)},${100*(playerHealth/100)},1)`;
+            stats.fillStyle = `rgba(255,${150*(playerHealth/100)},${100*(playerHealth/100)},1)`;
             stats.lineWidth = 4;
             // stats.font = "48px serif";
             stats.fillRect(20, canvas.height - 20, 20, -playerHealth * 2);
