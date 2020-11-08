@@ -226,20 +226,16 @@ body {
 }
 @media (max-width: 500px) {
 	.wrapper {
-		height: 38vh;
+		height: 45vh;
+		padding: 0 3vh;
 	}
 }
 
-@media (max-width: 415px) {
-	.wrapper {
-		height: 49vh;
-		padding: 0 28px;
-	}
-}
+
 
 @media (max-width: 375px) {
 	.wrapper {
-		height: 45vh;
+		height: 38vh;
 		padding: 0 27px;
 	}
 }
