@@ -184,12 +184,12 @@
 
         }
     }
-    MainTitle.prototype.loadFonts = async function() {
+    MainTitle.prototype.loadFonts = function() {
 
         for (let i = 0; i < this.listFonts.length; i++) {
             this.allCount++
                 let font = new FontFace(this.listFonts[i].name, this.listFonts[i].url);
-            await font.load();
+            font.load();
             document.fonts.add(font);
             this.loadCount++
 
